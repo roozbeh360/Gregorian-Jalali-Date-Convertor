@@ -106,4 +106,29 @@ function jalali_to_gregorian($j_y, $j_m, $j_d,$str)
     if($str) return $gy.'/'.$gm.'/'.$gd ;
     return array($gy, $gm, $gd); 
 } 
+
+
+function comparedate($_date_mix_jalaly,$_date_mix_gregorian)
+{
+  $_date_arr_jalaly = explode('/', $_date_mix_jalaly);
+  $_date_arr_gregorian = explode('/', $_date_mix_gregorian);		
+  
+  $arr_jtg = jalali_to_gregorian($_date_arr_jalaly[0],$_date_arr_jalaly[1],$_date_arr_jalaly[2]);
+		
+  if($_date_arr_gregorian[0]> $arr_jtg[0])
+    {
+	 return  false;
+	}
+		
+	else if($_date_arr_gregorian[0]== $arr_jtg[0] && $_date_arr_gregorian[1]>$arr_jtg[1])
+	{
+	 return false;
+	}
+	else if($_date_arr_gregorian[0]== $arr_jtg[0] && $_date_arr_gregorian[1]==$arr_jtg[1] && $_date_arr_gregorian[2]>$arr_jtg[2])
+	{
+	 return false;
+	}
+  return true ;	
+}
+
 ?>

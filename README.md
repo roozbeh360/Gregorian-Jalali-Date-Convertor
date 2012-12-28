@@ -18,3 +18,9 @@ $j_d: jalali day
 $str: return in string format
 
 if $str set to true the function return converted date in string format .
+
+easy compare jalaly and Gregorian date by :
+
+* comparedate($_date_mix_jalaly,$_date_mix_gregorian)
+
+give 2 dates in string format .
